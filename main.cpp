@@ -94,19 +94,47 @@ void readFile()
 		}
 		else //married
 		{
+			for (int i = 0; i < 7; i++)
+			{
+				data.get(c);
+			}
+			//dochodzimy do imienia
 
+			string firstName;
+			string secondName;
+			do
+			{
+				data.get(c);
+				if (c != ',') firstName.insert(firstName.end(), c);
+			} while (c != ',');
+			do
+			{
+				data.get(c);
+				if (c != ')') secondName.insert(secondName.end(), c);
+
+			} while (c != ')');
+
+			pairVec[MARRIED].push_back(make_pair(firstName, secondName));
+			getline(data, firstName);
 		}
 	}
 
 
 	data.close();
+	cout << "PERSON:" << endl;
 	for (auto it = personVec[0].begin(); it != personVec[0].end(); it++)
 	{
 		cout << *it << endl;
 	}
+	cout << "PARENT:" << endl;
 	for (auto it = pairVec[PARENT].begin(); it != pairVec[PARENT].end(); it++)
 	{
 	cout << (it->first) << "," << (it->second) << endl;
+	}
+	cout << "MARRIED:" << endl;
+	for (auto it = pairVec[MARRIED].begin(); it != pairVec[MARRIED].end(); it++)
+	{
+		cout << (it->first) << "," << (it->second) << endl;
 	}
 	int a;
 	cin >> a;
