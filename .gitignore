@@ -3,3 +3,10 @@
 ################################################################################
 
 /.vs
+/Debug
+/Debug
+/Debug/SI_PROJECT.tlog
+/SI_PROJECT.sln
+/SI_PROJECT.vcxproj
+/SI_PROJECT.vcxproj.filters
+/SI_PROJECT.vcxproj.user

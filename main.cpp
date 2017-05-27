@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <stdlib.h>
 #include "readFile.h"
 #include "toBinary.h"
 #include "toGray.h"
@@ -14,8 +15,11 @@ vector <pair<string, string>> pairVec[2];
 
 int main(int argc, char** argv)
 {
+	system("cls");
 	readFile();
-	toBinary();
+	toBinaryPerson();
+	toBinaryPairs();
 
+	system("pause");
 	return 0;
 }

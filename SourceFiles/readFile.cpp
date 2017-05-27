@@ -8,12 +8,15 @@ void readFile()
 	cin >> fileName;
 	ifstream data(fileName.c_str*/
 
-	ifstream data("Family_01.txt");
+	ifstream data("DataFiles/Family_01.txt");
 
 	if (!data)
 	{
-		cout << "Blad otwarcia pliku! Program zostaje zamkniety...";
-		EXIT_FAILURE;
+		std::cout << "Blad otwarcia pliku! Program zostaje zamkniety...";
+		int i;
+		std::cin >> i;
+		system("pause");
+		exit(EXIT_FAILURE);
 	}
 	while (!data.eof())
 	{
@@ -99,7 +102,7 @@ void readFile()
 
 
 	data.close();
-	cout << "PERSON:" << endl;
+	/*cout << "PERSON:" << endl;
 	for (auto it = personVec[0].begin(); it != personVec[0].end(); it++)
 	{
 		cout << *it << endl;
@@ -114,6 +117,5 @@ void readFile()
 	{
 		cout << (it->first) << "," << (it->second) << endl;
 	}
-	int a;
-	cin >> a;
+	*/ //do podejrzenia wczytania
 }
