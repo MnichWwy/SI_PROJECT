@@ -5,8 +5,6 @@
 
 using namespace std;
 
-void readFile();
-
 vector<string> personVec[1];
 vector <pair<string, string>> pairVec[2];
 
