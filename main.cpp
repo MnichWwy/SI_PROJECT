@@ -5,6 +5,7 @@
 #include "readFile.h"
 #include "toBinary.h"
 #include "toGray.h"
+#include "menu.h"
 
 using namespace std;
 
@@ -17,7 +18,6 @@ int main(int argc, char** argv)
 {
 	system("cls");
 	readFile();
-	toGrayPairs();
-	system("pause");
+	mainMenu();
 	return 0;
 }

@@ -19,7 +19,6 @@ void toGrayPerson()
 			}
 		}
 		*it = temp;
-		cout << (*it)<<endl;
 	}
 }
 
@@ -42,7 +41,7 @@ void toGrayPairs()
 			}
 		}
 		(*it).first = temp;
-		cout << (*it).first << endl;
+
 
 		for (size_t i = 1; i < (*it).second.size(); ++i)
 		{
@@ -56,7 +55,7 @@ void toGrayPairs()
 			}
 		}
 		(*it).second = temp;
-		cout << (*it).second << endl;
+
 	}
 
 	for (auto it = pairVec[MARRIED].begin(); it != pairVec[MARRIED].end(); it++)
@@ -74,7 +73,6 @@ void toGrayPairs()
 			}
 		}
 		(*it).first = temp;
-		cout << (*it).first << endl;
 
 		for (size_t i = 1; i < (*it).second.size(); ++i)
 		{
@@ -88,6 +86,5 @@ void toGrayPairs()
 			}
 		}
 		(*it).second = temp;
-		cout << (*it).second << endl;
 	}
 }
