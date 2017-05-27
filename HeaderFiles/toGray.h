@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "toBinary.h"
 
 
 #define PARENT 0

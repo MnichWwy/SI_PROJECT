@@ -17,9 +17,7 @@ int main(int argc, char** argv)
 {
 	system("cls");
 	readFile();
-	toBinaryPerson();
-	toBinaryPairs();
-
+	toGrayPairs();
 	system("pause");
 	return 0;
 }
