@@ -5,13 +5,14 @@ void initPopulation()
 	srand(time(NULL));
 	for (int i = 0; i<populationSize; i++)
 	{
-		population.push_back(bitset<6>(rand() % 33).to_string());
+		//actualPopulation.push_back(bitset<6>(rand() % 33).to_string());
+		actualPopulation[i] = bitset<6>(rand() % 33).to_string();
 	}
 }
 
 void showPopulation()
 {
-	for (auto it = population.begin(); it != population.end(); it++)
+	for (auto it = actualPopulation.begin(); it != actualPopulation.end(); it++)
 	{
 		cout << *it << endl;
 	}
