@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "mutation.h"
 
 int getInt()
 {
@@ -52,7 +53,34 @@ void codingMetodMenu()
 			return;
 	}
 }
-void mutationsMenu(){}
+void mutationsMenu() 
+{
+	system("cls");
+	cout << "***** MUTACJA *****" << endl;
+	cout << "Wybierz rodzaj mutacji lub wybierz 5, aby wyjsc do poprzedniego menu" << endl;
+	cout << " 1. Losowa negacja genu" << endl << " 2. Zamiana genow" << endl <<  endl << " 3. Inwersja ciągu genow" << endl << " 4.Wyjscie" << endl;
+	cout << "Wybor: ";
+	int choice = getIntFromRange(1, 5);
+	if (choice == 4)
+	{
+		mainMenu();
+	}
+
+	if (choice == 3)
+	{
+		inversionMutation();
+	}
+
+	else if (choice == 2)
+	{
+		swapMutation();
+	}
+	else
+	{
+		bitflipMutation();
+	}
+
+}
 void crossoverMenu(){}
 void mainMenu()
 {
