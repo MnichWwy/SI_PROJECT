@@ -8,15 +8,13 @@
 using namespace std;
 
 extern int populationSize;
-extern int bestActualFitness;
+extern float crossingProb;
 extern vector<int> fitness;
 extern vector<string> actualPopulation;
 extern vector<string> crossovers;
 extern vector<string> mutations;
 extern vector<string> newPopulation;
+extern vector<int> selectedIndex;
 
-void initPopulation();
-void showPopulation();
-void showInRow();
-void sortByFitness();
-void fitnessFunction(int i);
+void selectChromosome();
+void singlePointCrossover();
