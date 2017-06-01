@@ -1,5 +1,5 @@
 #include "menu.h"
-#include "mutation.h"
+
 
 int getInt()
 {
@@ -13,12 +13,12 @@ int getInt()
 	}
 	return x;
 }
-int getIntFromRange(int down,int up)
+int getIntFromRange(int down, int up)
 {
 	int x;
 	cin >> x;
-	while ((cin.fail())||(x<down)||(x>up)) {
-		cout << "Podaj liczbe z zakresu " << down<< " - "<< up << endl;
+	while ((cin.fail()) || (x<down) || (x>up)) {
+		cout << "Podaj liczbe z zakresu " << down << " - " << up << endl;
 		cin.clear();
 		cin.ignore(256, '\n');
 		cin >> x;
@@ -29,7 +29,7 @@ void codingMetodMenu()
 {
 	system("cls");
 	cout << "***** MENU KODOWANIA *****" << endl;
-	cout << " 1. NKB" << endl << " 2. Kod GRAY'a" << endl << " 3. Powrot"<< endl;
+	cout << " 1. NKB" << endl << " 2. Kod GRAY'a" << endl << " 3. Powrot" << endl;
 	int choice = getIntFromRange(1, 3);
 	if (choice == 3)
 	{
@@ -46,19 +46,19 @@ void codingMetodMenu()
 	}
 	else
 	{
-			toGrayPerson();
-			toGrayPairs();
-			cout << endl << "Wybrano kodowanie w kodzie GRAY'a" << endl;
-			system("pause");
-			return;
+		toGrayPerson();
+		toGrayPairs();
+		cout << endl << "Wybrano kodowanie w kodzie GRAY'a" << endl;
+		system("pause");
+		return;
 	}
 }
-void mutationsMenu() 
+void mutationsMenu()
 {
 	system("cls");
 	cout << "***** MUTACJA *****" << endl;
 	cout << "Wybierz rodzaj mutacji lub wybierz 5, aby wyjsc do poprzedniego menu" << endl;
-	cout << " 1. Losowa negacja genu" << endl << " 2. Zamiana genow" << endl <<  endl << " 3. Inwersja ciÄ…gu genow" << endl << " 4.Wyjscie" << endl;
+	cout << " 1. Losowa negacja genu" << endl << " 2. Zamiana genow" << endl << endl << " 3. Inwersja ci¹gu genow" << endl << " 4.Wyjscie" << endl;
 	cout << "Wybor: ";
 	int choice = getIntFromRange(1, 5);
 	if (choice == 4)
@@ -81,22 +81,100 @@ void mutationsMenu()
 	}
 
 }
-void crossoverMenu(){}
+
+void crossoverMenu()
+{
+	system("cls");
+	cout << "***** KRZYZOWANIE *****" << endl;
+	cout << " 1. Ustal prawdopodobienstwo krzyzowania (domyslnie 0.7)" << endl << " 2. Wybierz rodzaj krzyzowania (domyslnie jednopunktowe)" << endl << " 3. Wyjscie" << endl;
+	cout << "Wybor: ";
+	int choice = getIntFromRange(1, 3);
+	if (choice == 3)
+	{
+		mainMenu();
+	}
+	if (choice == 1)
+	{
+		cout << "Podaj prawdopodobienstwo krzyzowania: ";
+		cin >> crossingProb;
+	}
+	else if (choice == 2)
+	{
+		cout << "1. Krzyzowanie jednopunktowe." << endl << "2. Wyjscie"<<endl;
+		int choice2 = getIntFromRange(1, 2);
+		if (choice2 == 2)
+		{
+			mainMenu();
+		}
+		if (choice2 == 1)
+		{
+			
+		}
+	}	
+}
+
+void fitnessMenu()
+{
+	system("cls");
+	cout << "***** FUNKCJA PRZYSTOSOWANIA *****" << endl;
+	cout << "x = wartosc dziesietna chromosomu, y = liczba '1' w chromosomie" << endl;
+	cout << " 1. x*x + 4 * y" << endl << " 2. x*x*y" << endl << " 3. y*y + 2 * x" << endl <<" 4. Wyjscie" << endl;
+	cout << "Wybor: ";
+	int choice = getIntFromRange(1, 4);
+	if (choice == 4)
+	{
+		mainMenu();
+	}
+	if (choice == 1)
+	{
+		fitnessNumber = 1;
+	}
+	else if (choice == 2)
+	{
+		fitnessNumber = 1;
+	}
+	else if (choice == 3)
+	{
+		fitnessNumber = 3;
+	}
+}
+
+void showMenu()
+{
+	system("cls");
+	fitnessFunction(fitnessNumber);
+	sortByFitness();
+	selectChromosome();
+	singlePointCrossover();
+	showInRow();
+	system("pause");
+	cout <<endl << endl << "1. Wyjscie" << endl;
+	if (getIntFromRange(1, 1) == 1) mainMenu;
+
+}
+
 void mainMenu()
 {
 	while (1)
 	{
 		system("cls");
 		cout << "***** MENU GLOWNE *****" << endl;
-		cout << " 1. Krzyzowanie" << endl << " 2. Mutacje" << endl << " 3. Wybor kodowania (domyslnie NKB)" << endl << " 4. Wyjscie" << endl;
+		cout << " 1. Krzyzowanie" << endl << " 2. Mutacje" << endl << " 3. Wybor kodowania (domyslnie NKB)" << endl << " 4. Funkcja przystosowania" << endl << " 5. Wyswietlanie" << endl << " 6. Wyjscie" << endl;
 		cout << "Wybor: ";
-		int choice = getIntFromRange(1, 4);
-		if (choice == 4)
+		int choice = getIntFromRange(1, 6);
+		if (choice == 6)
 		{
 			system("pause");
 			exit(EXIT_SUCCESS);
 		}
-
+		if (choice == 5)
+		{
+			showMenu();
+		}
+		if (choice == 4)
+		{
+			fitnessMenu();
+		}
 		if (choice == 3)
 		{
 			codingMetodMenu();
