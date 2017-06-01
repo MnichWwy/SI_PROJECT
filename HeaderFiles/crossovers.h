@@ -9,6 +9,7 @@ using namespace std;
 
 extern int populationSize;
 extern float crossingProb;
+extern int crossoverNumber;
 extern vector<int> fitness;
 extern vector<string> actualPopulation;
 extern vector<string> crossovers;
