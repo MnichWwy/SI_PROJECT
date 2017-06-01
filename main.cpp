@@ -18,6 +18,8 @@ vector <pair<string, string>> pairVec[2];
 int populationSize = 10;
 int bestActualFitness;
 float crossingProb = 0.7;
+int fitnessNumber = 1;
+int crossoverNumber = 1;
 vector<int> fitness(populationSize,0);
 vector<string> actualPopulation(populationSize,"      ");
 vector<string> crossovers(populationSize, "      ");
@@ -31,13 +33,13 @@ int main(int argc, char** argv)
 	system("cls");
 	//readFile();
 	initPopulation();
-	//mainMenu();
+	mainMenu();
 	//showPopulation(); //test
-	fitnessFunction(1);
-	sortByFitness();
-	selectChromosome();
-	singlePointCrossover();
-	showInRow();
+	//fitnessFunction(fitnessNumber);
+	//sortByFitness();
+	//selectChromosome();
+	//singlePointCrossover();
+	//showInRow();
 	system("pause");
 	return 0;
 }
