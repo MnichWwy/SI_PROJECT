@@ -58,26 +58,34 @@ void mutationsMenu()
 	system("cls");
 	cout << "***** MUTACJA *****" << endl;
 	cout << "Wybierz rodzaj mutacji lub wybierz 5, aby wyjsc do poprzedniego menu" << endl;
-	cout << " 1. Losowa negacja genu" << endl << " 2. Zamiana genow" << endl << endl << " 3. Inwersja ci¹gu genow" << endl << " 4.Wyjscie" << endl;
+	cout << " 1. Zmiana prawdopodobienstwa mutacji" << endl<< " 2. Losowa negacja genu" << endl << " 3. Zamiana genow" << endl << endl << " 4. Inwersja ciagu genow" << endl << " 5.Wyjscie" << endl;
 	cout << "Wybor: ";
 	int choice = getIntFromRange(1, 5);
-	if (choice == 4)
+	if (choice == 5)
 	{
 		mainMenu();
 	}
 
-	if (choice == 3)
+	if (choice == 4)
 	{
 		inversionMutation();
 	}
 
-	else if (choice == 2)
+	else if (choice == 3)
 	{
 		swapMutation();
 	}
-	else
+	else if (choice == 2)
 	{
 		bitflipMutation();
+	}
+	
+	else
+	{
+		int much=0;
+		cout << "Podaj prawdopodobienstwo (liczbe %): " <<endl;
+		cin >> much;
+		changeMutationChance(much);
 	}
 
 }
